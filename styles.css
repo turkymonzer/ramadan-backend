@@ -1,0 +1,712 @@
+/* Modern Styling for Ramadan App - Enhanced Version */
+:root {
+    --primary-color: #1a936f;
+    --primary-light: #88d498;
+    --secondary-color: #114b5f;
+    --accent-color: #f3a712;
+    --accent-light: #f8c66a;
+    --light-bg: #f7f9fc;
+    --dark-bg: #114b5f;
+    --dark-text: #2c3e50;
+    --light-text: #ffffff;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align: center;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.7;
+    padding-bottom: 100px;
+    font-size: 16px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Section - Enhanced */
+header {
+    background: var(--gradient);
+    color: var(--light-text);
+    padding: 40px 20px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Add decorative elements to header */
+header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.date-display {
+    font-size: 1.3rem;
+    opacity: 0.92;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.counter-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    padding: 10px 25px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.counter-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Section Styling - Enhanced */
+section {
+    background: var(--light-text);
+    padding: 30px;
+    margin: 30px auto;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 50px;
+}
+
+/* Ramadan Calendar - Enhanced */
+#ramadan-calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+    gap: 12px;
+    padding: 5px;
+}
+
+.calendar-day {
+    background: #f9f9f9;
+    padding: 15px 8px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.calendar-day.today {
+    font-weight: bold;
+    background: var(--gradient);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 5;
+}
+
+.calendar-day.past-day {
+    background-color: #f0f0f0;
+    color: #999;
+}
+
+.calendar-day.future-day {
+    border: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.calendar-day.future-day:hover {
+    background-color: var(--primary-light);
+    color: var(--dark-text);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Filter Controls - Enhanced */
+.filter-controls {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+    background: var(--gradient);
+    color: white;
+    font-weight: 600;
+}
+
+/* Quran Parts List - Enhanced */
+.checklist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quran-part-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    padding: 18px 20px;
+    margin: 15px 0;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.quran-part-item::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #e0e0e0;
+    transition: var(--transition);
+}
+
+.quran-part-item:hover {
+    background: #f5f7fa;
+    transform: translateX(-8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.quran-part-item.reserved {
+    border-right: none;
+}
+
+.quran-part-item.reserved::before {
+    background-color: var(--accent-color);
+    width: 5px;
+}
+
+.quran-part-item.read {
+    border-right: none;
+    background-color: rgba(26, 147, 111, 0.05);
+}
+
+.quran-part-item.read::before {
+    background-color: var(--primary-color);
+    width: 5px;
+}
+
+.part-number {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: var(--secondary-color);
+}
+
+.part-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Custom Checkbox Styling - Enhanced */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    transition: var(--transition);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+    animation: checkmark 0.2s forwards;
+}
+
+@keyframes checkmark {
+    0% { opacity: 0; transform: scale(0.5) rotate(45deg); }
+    100% { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+.checkbox-container .checkmark:after {
+    right: 7px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* YouTube Icon - Enhanced */
+.youtube-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.youtube-icon {
+    width: 32px;
+    height: 32px;
+    transition: var(--transition);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.youtube-icon:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Footer - Enhanced */
+footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    position: relative;
+    background-color: #f0f2f5;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.developer {
+    font-weight: bold;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.developer::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: var(--transition);
+    transform-origin: right;
+}
+
+.developer:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* WhatsApp Container - Enhanced */
+.whatsapp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#whatsapp-icon {
+    width: 65px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+#whatsapp-icon:hover {
+    transform: scale(1.15) rotate(10deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Modal Styling - Enhanced */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    animation: slideUp 0.4s;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.close-modal, .close-confirmation-modal {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover, .close-confirmation-modal:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.modal h3 {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eaeaea;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    text-align: center;
+    direction: ltr;
+    transition: var(--transition);
+}
+
+.modal input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 147, 111, 0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal button {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 12px rgba(26, 147, 111, 0.25);
+}
+
+.modal button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 147, 111, 0.3);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    section {
+        padding: 25px 20px;
+    }
+    
+    .calendar-day {
+        padding: 12px 6px;
+        font-size: 0.95rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+}
+
+/* Add subtle animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.today {
+    animation: pulse 2s infinite;
+}
+
+/* Add a nice scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Add these styles to your existing CSS file */
+
+/* Reset Button Styling */
+.reset-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.reset-btn:hover {
+    background-color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Update counter container to accommodate the reset button */
+.counter-container {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    padding: 10px 25px 15px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Daily Dua Section Styling */
+.daily-dua {
+    background: var(--light-text);
+    padding: 5px;
+    margin: 5px auto;
+    width: 80%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.dua-card {
+    background: rgba(26, 147, 111, 0.05);
+    padding: 15px; /* Reduce padding from 25px */
+    border-radius: 16px;
+    margin: 10px 0; /* Reduce padding from 15px */
+    border-right: 5px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+}
+
+.dua-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.dua-date {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.dua-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.dua-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.dua-nav-btn {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.9rem;;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(26, 147, 111, 0.2);
+}
+
+.dua-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 147, 111, 0.3);
+}
+
+@media (max-width: 768px) {
+    .dua-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .dua-nav-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
